@@ -51,3 +51,47 @@ console.log(maleCharacters)
 const femaleCharacters = characters.filter(character => character.gender === 'female')
 
 console.log(femaleCharacters)
+
+// map
+//1. get array of all names
+const names = characters.map(character => {
+    return character.name;
+})
+console.log(names)
+
+//2. get characters with height less than 200
+const heights = characters.map(character => character.height)
+console.log(heights)
+
+//3.get array of objects with just name and height properies
+const minifiedRecords = characters.map(character => ({
+    name: character.name,
+    height: character.height
+}))
+console.log(minifiedRecords)
+
+//4. get arrays of all first names
+const firstNames = characters.map(character => character.name.split(' ')[0])
+console.log(firstNames)
+
+// some
+//1. Is there at least one male character
+const oneMaleCharacter = characters.some(character => {
+    return character.gender === 'male'
+});
+
+console.log(oneMaleCharacter)
+
+//2. Is there at least one character with blue eyes?
+const oneBlueEyes = characters.some(character => character.eye_color === 'blue')
+console.log(oneBlueEyes)
+
+//3. Is there at least one character taller than 210?
+const oneTaller210 = characters.some(character => character.height > 210)
+console.log(oneTaller210)
+
+
+// is there at least one character that has mass less than 50
+const oneMassLessThan50 = characters.some(character => character.mass < 50);
+console.log(oneMassLessThan50)
+
