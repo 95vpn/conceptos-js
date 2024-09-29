@@ -95,3 +95,29 @@ console.log(oneTaller210)
 const oneMassLessThan50 = characters.some(character => character.mass < 50);
 console.log(oneMassLessThan50)
 
+// sort
+//1. sort by mass
+const byMass = characters.sort((a, b) => {
+    return b.mass - a.mass
+})
+console.log(byMass)
+
+//2. sort by height
+const byHeight = characters.sort((a, b) => {
+    return a.height - b.height;
+})
+console.log(byHeight)
+
+//. sort by name
+const byName = characters.sort((a, b) => {
+    if (a.name < b.name) return 1;
+    return -1
+})
+
+console.log(byName)
+
+//3. sort by gender
+const byGender = characters.sort((a, b) => {
+    if (a.gender === 'female') return 1;
+    return -1
+})
