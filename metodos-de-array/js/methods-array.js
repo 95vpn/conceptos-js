@@ -121,3 +121,16 @@ const byGender = characters.sort((a, b) => {
     if (a.gender === 'female') return 1;
     return -1
 })
+
+
+// Reduce
+//1. get the total mass of all characters
+const totalMass = characters.reduce((acc, cur) => {
+    return acc + cur.mass;
+}, 0);
+
+console.log(totalMass)
+
+// 2. get total height af all characters
+
+const totalHeight = characters.reduce((acc, cur) => acc + cur.height, 0)
