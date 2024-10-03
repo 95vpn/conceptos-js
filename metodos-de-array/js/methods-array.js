@@ -125,12 +125,49 @@ const byGender = characters.sort((a, b) => {
 
 // Reduce
 //1. get the total mass of all characters
-const totalMass = characters.reduce((acc, cur) => {
-    return acc + cur.mass;
-}, 0);
+const totalMass = characters.reduce((acc, cur) => acc + cur.mass, 0);
 
 console.log(totalMass)
 
 // 2. get total height af all characters
 
 const totalHeight = characters.reduce((acc, cur) => acc + cur.height, 0)
+console.log(totalHeight)
+
+//3. get total number of characters by eyeColor
+const characterByColor = characters.reduce((acc, cur) => {
+    const color = cur.eye_color;
+    if(acc[color]) {
+        acc[color]++
+    } else {
+        acc[color] = 1;
+    }
+    return acc;
+}, {})
+
+console.log(characterByColor)
+
+//4. get total number of characters in all the character names
+const totalNameCharacters = characters.reduce((acc, cur) => acc + cur.name.length, 0)
+console.log(totalNameCharacters)
+
+//every
+
+//1. does every character have blue eyers?
+const allBlueEyes = characters.every(character => {
+    return character.eye_color === 'blue';
+})
+console.log(allBlueEyes)
+
+//2. does every character have mass more than 40?
+const allMassMoreThan40 = characters.every(character => character.mass > 40)
+
+console.log(allMassMoreThan40)
+
+//3. Is every character shorter than 200?
+const allShorterThan200 = characters.every(character => character.height < 200)
+console.log(allShorterThan200)
+
+//4. is every characters male ?
+const allMale = characters.every(character => character.gender === 'male')
+console.log(allMale)
